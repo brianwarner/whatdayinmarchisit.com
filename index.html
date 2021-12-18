@@ -1,0 +1,71 @@
+<html>
+<head>
+<title>What day in March is it?</title>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-173248500-1"></script>
+
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-173248500-1');
+</script>
+
+<script type="text/javascript">
+    function getMarchDate() {
+        var marchTimeStamp = Date.UTC(2020,2,1,0,0,0);
+        var nowTimeStamp = Date.now() - (new Date().getTimezoneOffset()) * 60000;
+        var microSecondsDiff = Math.abs(marchTimeStamp - nowTimeStamp );
+        var daysDiff = Math.floor(microSecondsDiff/(1000 * 60 * 60  * 24)) + 1;
+        return daysDiff+(daysDiff % 10 == 1 && daysDiff % 100 != 11 ? "st" : (daysDiff
+                    % 10 == 2 && daysDiff % 100 != 12 ? "nd" : (daysDiff % 10 == 3 &&
+                        daysDiff % 100 != 13 ? "rd" : "th")));
+    }
+
+    function getGritty() {
+        const gritty = ['comeon.gif','fireworks.gif','peaceout.gif','prancing.gif','shrug.gif','what.gif','yougotit.gif','dance.gif','glasses.gif','popcorn.gif','run.gif','ugh.gif','yeah.gif'];
+        const random = Math.floor(Math.random() * gritty.length);
+        return gritty[random];
+    }
+
+    function getToday() {
+
+        var now = new Date();
+        var months = ['January', 'February', 'March', 'April', 'May', 'June',
+            'July', 'August', 'September', 'October', 'November' , 'December']
+        return now.getDate() + (now.getDate() % 10 == 1 && now.getDate() % 100 != 11 ? "st" :
+                 (now.getDate() % 10 == 2 && now.getDate % 100 != 12 ? "nd" :
+                 (now.getDate() % 10 == 3 && now.getDate() % 100 != 13 ?
+                  "rd" : "th"))) + " of " + months[now.getMonth()];
+
+    }
+
+</script>
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@BrianWarnerIRL" />
+
+<meta property="og:url" content="https://whatdayinmarchisit.com" />
+<meta property="og:title" content="What day in March is it?" />
+<meta property="og:description" content="It... appears to be March again." />
+<meta property="og:image" content="https://whatdayinmarchisit.com/forever_march.jpg" />
+
+</head>
+<body>
+
+<div style="margin: 100px auto 50px; font-family: serif; width: 100%; text-align: center;">
+<h1 style="font-size: 2.5em;">
+    Today is March <script>document.write(getMarchDate())</script>.
+</h1>
+<img src="https://whatdayinmarchisit.com/gifs/herewegoagain.gif">
+<script>//document.write("<img src=\"gifs/"+getGritty()+"\">")</script>
+</div>
+
+<div style="margin: 0px auto; font-family: serif; width: 100%; text-align: center;">
+<a style="text-decoration: none; color: #999" href="https://twitter.com/BrianWarnerIRL">@BrianWarnerIRL</a>
+</div>
+
+</body>
+</html>
